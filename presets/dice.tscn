@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqn3shkxepcew"]
+
+[ext_resource type="ArrayMesh" uid="uid://lubj75yehacl" path="res://models/dado.obj" id="1_d4xtc"]
+[ext_resource type="Material" uid="uid://dhyq2lrh5n52f" path="res://models/dice_material.tres" id="1_yi4l3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qb6mi"]
+resource_local_to_scene = true
+
+[node name="Dice" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.502741, -0.498521, -0.503874)
+material_override = ExtResource("1_yi4l3")
+mesh = ExtResource("1_d4xtc")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_qb6mi")
