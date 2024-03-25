@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d10edfoq82l72"]
 
-[ext_resource type="Shape3D" uid="uid://dyy1q6enpdedb" path="res://shapes/new10_box_shape_3d.tres" id="1_20xhw"]
+[ext_resource type="Shape3D" uid="uid://dyy1q6enpdedb" path="res://shapes/wall_shape.tres" id="1_20xhw"]
 [ext_resource type="PackedScene" uid="uid://cqn3shkxepcew" path="res://presets/dice.tscn" id="1_l7osk"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0ebmr"]
@@ -15,12 +15,30 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10.
 transform = Transform3D(1, 0, 0, 0, 0.486976, 0.873416, 0, -0.873416, 0.486976, 0, 7.29944, 0)
 shadow_enabled = true
 
+[node name="SpotLight3D" type="SpotLight3D" parent="DirectionalLight3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.66231, -3.36894, 1.87837)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="DirectionalLight3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.78661, -5.72513, -1.55027)
+
 [node name="DicesHolder" type="Node" parent="."]
 
 [node name="Dice" parent="DicesHolder" instance=ExtResource("1_l7osk")]
 transform = Transform3D(-0.476629, 0.423909, -0.770147, -0.811701, 0.124208, 0.570714, 0.337589, 0.897148, 0.284886, 0, 4.01663, 0)
 
 [node name="Board" type="Node" parent="DicesHolder"]
+
+[node name="roof" type="StaticBody3D" parent="DicesHolder/Board"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.51785, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DicesHolder/Board/roof"]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
+visible = false
+mesh = SubResource("BoxMesh_0ebmr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DicesHolder/Board/roof"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0295515, 0.0506029, -0.00965428)
+shape = ExtResource("1_20xhw")
 
 [node name="Floor" type="StaticBody3D" parent="DicesHolder/Board"]
 
@@ -33,7 +51,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0295515, 0.0506029, -0.0096
 shape = ExtResource("1_20xhw")
 
 [node name="TopWall" type="StaticBody3D" parent="DicesHolder/Board"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -2, -5.5)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 4.89788, -5.5)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="DicesHolder/Board/TopWall"]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
@@ -43,7 +61,7 @@ mesh = SubResource("BoxMesh_0ebmr")
 shape = ExtResource("1_20xhw")
 
 [node name="BotWall" type="StaticBody3D" parent="DicesHolder/Board"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -2, 5.5)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 4.89788, 5.5)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="DicesHolder/Board/BotWall"]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
@@ -53,20 +71,21 @@ mesh = SubResource("BoxMesh_0ebmr")
 shape = ExtResource("1_20xhw")
 
 [node name="left" type="StaticBody3D" parent="DicesHolder/Board"]
-transform = Transform3D(1, 0, 0, 0, -1, 8.74227e-08, 0, -8.74227e-08, -1, 0, -7.5, 3.5)
+transform = Transform3D(1, 0, 0, 0, -1, 8.74227e-08, 0, -8.74227e-08, -1, 0, -0.60212, 3.5)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="DicesHolder/Board/left"]
-transform = Transform3D(-4.37114e-07, 1, -4.37114e-07, 0, -4.37114e-08, -10, -10, -4.37114e-08, 1.91069e-14, -5.5, -5.5, 3.5)
+transform = Transform3D(-4.37114e-07, 1, -4.37114e-07, 0, -4.37114e-08, -10, -10, -4.37114e-08, 0, -5.49881, -5.5, 3.52262)
 mesh = SubResource("BoxMesh_0ebmr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DicesHolder/Board/left"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 0, -5.5, -5.5, 3.5)
 shape = ExtResource("1_20xhw")
 
 [node name="right" type="StaticBody3D" parent="DicesHolder/Board"]
-transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91068e-15, 5.5, -2, 0)
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91068e-15, 5.5, 4.89788, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="DicesHolder/Board/right"]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
+transform = Transform3D(10, 0, 0, 0, 1, -8.35185e-22, 8.47033e-21, -8.35188e-23, 10, 0, 0, 0)
 mesh = SubResource("BoxMesh_0ebmr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DicesHolder/Board/right"]
