@@ -16,16 +16,32 @@ script = ExtResource("1_h4xhv")
 [node name="Label" type="Label" parent="."]
 offset_right = 78.0
 offset_bottom = 23.0
-text = "Some text"
+text = "Dice it"
 
-[node name="Button" type="Button" parent="."]
+[node name="JumpButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 516.0
-offset_top = 6.0
-offset_right = 709.0
-offset_bottom = 73.0
+offset_left = 492.0
+offset_top = 569.0
+offset_right = 685.0
+offset_bottom = 636.0
 text = "Jump"
-flat = true
 
-[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="AddDiceButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 692.0
+offset_top = 568.0
+offset_right = 769.0
+offset_bottom = 632.0
+text = "+1"
+
+[node name="RemoveDiceButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 568.0
+offset_right = 487.0
+offset_bottom = 638.0
+text = "-1"
+
+[connection signal="pressed" from="JumpButton" to="." method="_on_jump_button_pressed"]
+[connection signal="pressed" from="AddDiceButton" to="." method="_on_add_dice_button_pressed"]
+[connection signal="pressed" from="RemoveDiceButton" to="." method="_on_remove_dice_button_pressed"]
