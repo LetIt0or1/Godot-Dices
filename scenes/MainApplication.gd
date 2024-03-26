@@ -25,4 +25,3 @@ func _remove_dice():
 	if dices.size() > 0:
 		var dice_to_remove = dices.pop_back()  # Remove the last dice from the array
 		dice_to_remove.queue_free()  # Queue the dice for deletion
-		#dice_to_remove.delete()

@@ -30,7 +30,7 @@ metadata/_edit_lock_ = true
 [node name="DicesHolder" type="Node" parent="."]
 
 [node name="Dice" parent="DicesHolder" instance=ExtResource("1_l7osk")]
-transform = Transform3D(-0.476629, 0.423909, -0.770147, -0.811701, 0.124208, 0.570714, 0.337589, 0.897148, 0.284886, 0, 5, 0)
+transform = Transform3D(-0.476629, 0.423909, -0.770147, -0.811701, 0.124208, 0.570714, 0.337589, 0.897148, 0.284886, 0, 9.13116, 0)
 
 [node name="Board" type="Node" parent="DicesHolder"]
 
