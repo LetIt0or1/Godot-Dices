@@ -1,12 +1,13 @@
 [gd_scene load_steps=2 format=3 uid="uid://xlky4u04oyij"]
 
-[ext_resource type="Script" path="res://presets/ui/control.gd" id="1_h4xhv"]
+[ext_resource type="Script" path="res://scripts/control.gd" id="1_h4xhv"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
+anchor_right = 0.422
 anchor_bottom = 1.0
+offset_right = -0.144012
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h4xhv")
@@ -14,32 +15,33 @@ script = ExtResource("1_h4xhv")
 [node name="SubViewport" type="SubViewport" parent="."]
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_right = 78.0
 offset_bottom = 23.0
 text = "Dice it"
 
 [node name="JumpButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 492.0
-offset_top = 569.0
-offset_right = 685.0
-offset_bottom = 636.0
+offset_left = 136.0
+offset_top = 553.0
+offset_right = 329.0
+offset_bottom = 620.0
 text = "Jump"
 
 [node name="AddDiceButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 692.0
-offset_top = 568.0
-offset_right = 769.0
-offset_bottom = 632.0
+offset_left = 336.0
+offset_top = 552.0
+offset_right = 413.0
+offset_bottom = 616.0
 text = "+1"
 
 [node name="RemoveDiceButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 416.0
-offset_top = 568.0
-offset_right = 487.0
-offset_bottom = 638.0
+offset_left = 60.0
+offset_top = 552.0
+offset_right = 131.0
+offset_bottom = 622.0
 text = "-1"
 
 [connection signal="pressed" from="JumpButton" to="." method="_on_jump_button_pressed"]

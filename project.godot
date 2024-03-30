@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="Dices"
-run/main_scene="res://scenes/dice_thrower.tscn"
+run/main_scene="res://scenes/main_scene.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
+
+[filesystem]
+
+import/blender/enabled.android=true
+import/blender/enabled.web=true
 
 [rendering]
 

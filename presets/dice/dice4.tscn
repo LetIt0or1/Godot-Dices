@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://crqqnmwkecto0"]
+
+[ext_resource type="Script" path="res://scripts/dice.gd" id="1_v7ru2"]
+[ext_resource type="PackedScene" uid="uid://b7rrwfjjjyhc8" path="res://models/dice/dado/dado1.blend" id="2_yf2q0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qb6mi"]
+resource_local_to_scene = true
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ko2i2"]
+radius = 0.0717076
+height = 0.921338
+
+[node name="Dice" type="Node3D"]
+script = ExtResource("1_v7ru2")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="dado1" parent="RigidBody3D" instance=ExtResource("2_yf2q0")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.5, -0.5, -0.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
+visible = false
+shape = SubResource("BoxShape3D_qb6mi")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="RigidBody3D"]
+visible = false
+light_color = Color(0.0509804, 0.0627451, 1, 1)
+omni_range = 6.2381
+
+[node name="Corner1top" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.426, 0.428, 0)
+visible = false
+shape = SubResource("CapsuleShape3D_ko2i2")
+
+[node name="Corner2top" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.426316, 0.427781, 0)
+visible = false
+shape = SubResource("CapsuleShape3D_ko2i2")
+
+[node name="Corner3top" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0.428, 0.426)
+visible = false
+shape = SubResource("CapsuleShape3D_ko2i2")
+
+[node name="Corner4top" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0.428, -0.426)
+visible = false
+shape = SubResource("CapsuleShape3D_ko2i2")
+
+[node name="Corner1bot" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.426, -0.428, 0)
+visible = false
+shape = SubResource("CapsuleShape3D_ko2i2")
+
+[node name="Corner2bot" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.426316, -0.428, 0)
+visible = false
+shape = SubResource("CapsuleShape3D_ko2i2")
+
+[node name="Corner3bot" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, -0.428, 0.426)
+visible = false
+shape = SubResource("CapsuleShape3D_ko2i2")
+
+[node name="Corner4bot" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, -0.428, -0.426)
+visible = false
+shape = SubResource("CapsuleShape3D_ko2i2")
