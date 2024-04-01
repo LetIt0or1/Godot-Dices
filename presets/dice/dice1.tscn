@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cqn3shkxepcew"]
 
 [ext_resource type="Script" path="res://scripts/dice.gd" id="1_wwdaq"]
-[ext_resource type="PackedScene" uid="uid://rr82ihdmw6rc" path="res://models/dice/dado/dado2.blend" id="2_e0i7c"]
+[ext_resource type="PackedScene" uid="uid://rr82ihdmw6rc" path="res://models/dice/blend/dado2.blend" id="2_21sbj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qb6mi"]
 resource_local_to_scene = true
@@ -15,18 +15,15 @@ script = ExtResource("1_wwdaq")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 
-[node name="dado2" parent="RigidBody3D" instance=ExtResource("2_e0i7c")]
+[node name="dado2" type="Node3D" parent="RigidBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.5, -0.5, -0.5)
+
+[node name="dado3" parent="RigidBody3D" instance=ExtResource("2_21sbj")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.5, -0.5, -0.5)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
-visible = false
 shape = SubResource("BoxShape3D_qb6mi")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="RigidBody3D"]
-visible = false
-light_color = Color(0.0509804, 0.0627451, 1, 1)
-omni_range = 6.2381
 
 [node name="Corner1top" type="CollisionShape3D" parent="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.426, 0.428, 0)

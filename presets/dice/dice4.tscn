@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://crqqnmwkecto0"]
 
 [ext_resource type="Script" path="res://scripts/dice.gd" id="1_v7ru2"]
-[ext_resource type="PackedScene" uid="uid://b7rrwfjjjyhc8" path="res://models/dice/dado/dado1.blend" id="2_yf2q0"]
+[ext_resource type="PackedScene" uid="uid://b7rrwfjjjyhc8" path="res://models/dice/blend/dado1.blend" id="2_yf2q0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qb6mi"]
 resource_local_to_scene = true
