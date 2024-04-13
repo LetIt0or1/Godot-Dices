@@ -1,22 +1,24 @@
 extends Node3D
-
 # Assuming the RigidBody3D is the first child, or adjust the index accordingly
 var rigid_body: RigidBody3D
-
+signal throw_dice
 func _ready():
+	throw_dice.connect(applyRandomForce)
+	
 	# Initialize the RigidBody3D reference
 	rigid_body = get_child(0) as RigidBody3D
 	if not rigid_body:
 		print("RigidBody3D not found as a child. Please check the node hierarchy.")
 		return
 	else:
+		var keep_in_view_script = preload( "res://scripts/keep_in_view.gd" )
+		rigid_body.set_script(keep_in_view_script)
 		applyRandomForce()
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		applyRandomForce()
 		print(rigid_body.position)
-
 
 # Assuming min_force and max_force are defined somewhere in the script as the minimum
 # and maximum values for the force vector components

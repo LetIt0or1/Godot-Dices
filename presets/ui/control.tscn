@@ -7,6 +7,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h4xhv")
@@ -27,21 +29,25 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -55.4575
-offset_top = -40.0
-offset_right = 55.4575
+offset_left = -145.0
+offset_top = -107.0
+offset_right = 163.0
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 0
 
 [node name="RemoveDiceButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "-1"
 
 [node name="JumpButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Jump"
 
 [node name="AddDiceButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "+1"
 

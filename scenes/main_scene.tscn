@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://d10edfoq82l72"]
+[gd_scene load_steps=15 format=3 uid="uid://d10edfoq82l72"]
 
 [ext_resource type="Script" path="res://scripts/MainApplication.gd" id="1_it748"]
+[ext_resource type="Script" path="res://scripts/directional_light_gyro.gd" id="2_l0e04"]
 [ext_resource type="Material" uid="uid://dh6w0ns3rq2nb" path="res://models/deck/floor/textures/new_standard_material_3d.tres" id="2_w36e8"]
 [ext_resource type="Shape3D" uid="uid://dyy1q6enpdedb" path="res://models/deck/shapes/wall_shape.tres" id="3_8vbt5"]
 [ext_resource type="Shape3D" uid="uid://do4j8gbyhk1bu" path="res://models/deck/floor/floor_shape.tres" id="5_lvuqy"]
@@ -56,9 +57,10 @@ text = "BOTTOM"
 font_size = 150
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.951905, 0.267608, -0.149206, 0.185849, -0.117149, 0.97557, 0.243591, -0.95638, -0.161249, 0, 24.7155, 0)
+transform = Transform3D(1, 0, 0, 0, -0.956666, 0.291186, 0, -0.291186, -0.956666, 0, 24.7155, 0)
 light_energy = 1.202
 shadow_enabled = true
+script = ExtResource("2_l0e04")
 
 [node name="DicesHolder" type="Node" parent="."]
 
@@ -141,7 +143,7 @@ shape = SubResource("BoxShape3D_2radk")
 physics_material_override = SubResource("PhysicsMaterial_ino73")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="DicesHolder/Board/map/StaticBody3D"]
-transform = Transform3D(17.3738, 0, 10.6742, 0, 1, 0, -12.9566, 0, 14.3132, 14.2664, 0.0987892, 16.7579)
+transform = Transform3D(17.3738, 0, 10.6742, 0, 1, 0, -12.9566, 0, 14.3132, 19.3899, 0.0987892, 16.7579)
 material_override = SubResource("StandardMaterial3D_u8gq5")
 mesh = SubResource("PlaneMesh_2xtrq")
 
@@ -149,3 +151,7 @@ mesh = SubResource("PlaneMesh_2xtrq")
 shape = SubResource("BoxShape3D_gsqiu")
 
 [node name="Control" parent="." instance=ExtResource("6_wb8bi")]
+offset_left = 34.0
+offset_top = -96.0
+offset_right = 34.0
+offset_bottom = -96.0

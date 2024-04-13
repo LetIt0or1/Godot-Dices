@@ -1,8 +1,10 @@
 extends Node3D
 # Assuming the RigidBody3D is the first child, or adjust the index accordingly
 var rigid_body: RigidBody3D
-
+signal throw_dice
 func _ready():
+	throw_dice.connect(applyRandomForce)
+	
 	# Initialize the RigidBody3D reference
 	rigid_body = get_child(0) as RigidBody3D
 	if not rigid_body:

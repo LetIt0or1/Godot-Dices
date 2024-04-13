@@ -1,5 +1,9 @@
 extends Node3D
 
+signal remove_dice
+
+signal add_dice
+
 var dice_resources = [
 	preload("res://presets/dice/dice1.tscn"),
 	preload("res://presets/dice/dice2.tscn"),
@@ -9,6 +13,9 @@ var dice_resources = [
 var dices = []  # Array to keep track of the dice instances
 
 func _ready():
+	remove_dice.connect(_remove_dice)
+	add_dice.connect(_add_dice)
+	#connect(remove_dice, self, _remove_dice)
 	_add_dice()
 		
 func _process(delta):

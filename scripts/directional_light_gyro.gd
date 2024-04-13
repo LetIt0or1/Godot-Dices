@@ -1,17 +1,22 @@
 extends DirectionalLight3D
- 
-#func _ready():
-	# Make sure the gyroscope is available and enabled
-	#if Input.is_sensor_enabled(Input.SENSOR_GYROSCOPE):
-		#Input.set_sensor_enabled(Input.SENSOR_GYROSCOPE, true)
-	#else:
-		#print("Gyroscope is not available on this device.")
 
-func _process(delta):
-	# Assuming we can use the gyroscope data directly to set the light's orientation
-	if Input.is_sensor_enabled(Input.SENSOR_GYROSCOPE):
-		var gyro_data = Input.get_gravity()  # Or Input.get_gyroscope() depending on your need
-		# Convert gyroscope data to a suitable rotation format and apply it to the light
-		# The conversion will depend on how you want the gyroscope data to affect the light
-		var rotation_degrees = Vector3(rad2deg(asin(gyro_data.x)), rad2deg(asin(gyro_data.y)), rad2deg(asin(gyro_data.z)))
-		self.transform = Transform.IDENTITY.rotated(Vector3(1, 0, 0), deg2rad(rotation_degrees.x)).rotated(Vector3(0, 1, 0), deg2rad(rotation_degrees.y))
+
+var originalRotation: Vector3 = Vector3.ZERO
+var originalPosition: Vector3 = Vector3.ZERO
+func _ready():
+	originalRotation = rotation
+	originalPosition = position
+	
+
+func _physics_process(delta):
+	var accelerometer_value = Input.get_accelerometer()
+
+	# Normalize the accelerometer values to a range that suits the light rotation
+	# Assuming the values are in the range [-1, 1]
+	# You need to adjust these mappings based on how you want the accelerometer data to rotate the light
+	#var x_rotation = lerp(-90, -10, -accelerometer_value.z)  # Assuming phone vertical is z = -1
+	#var y_rotation = lerp(0, -90, accelerometer_value.x)  # Assuming rotating phone on y-axis maps to x accelerometer
+	#var z_rotation = 0  # Assuming no need to adjust z based on accelerometer
+
+	# Update the light's rotation
+	#rotation = accelerometer_value.normalized() + originalRotation

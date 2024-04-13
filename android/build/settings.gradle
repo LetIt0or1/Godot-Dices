@@ -5,9 +5,13 @@ pluginManagement {
     plugins {
         id 'com.android.application' version versions.androidGradlePlugin
         id 'org.jetbrains.kotlin.android' version versions.kotlinVersion
+        id 'org.jetbrains.kotlin.plugin.compose'
+        id 'kotlin-kapt'
+        id 'kotlin-android'
     }
     repositories {
         gradlePluginPortal()
+        mavenCentral()
         google()
     }
 }
