@@ -1,6 +1,6 @@
 ext.versions = [
         compose_version    : '1.2.0',
-        androidGradlePlugin: '7.4.2',
+        androidGradlePlugin: '8.3.2',
         compileSdk         : 34,
         // Also update 'platform/android/export/export_plugin.cpp#OPENGL_MIN_SDK_VERSION'
         minSdk             : 21,

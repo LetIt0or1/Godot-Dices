@@ -1,7 +1,6 @@
 extends Node3D
 
 signal remove_dice
-
 signal add_dice
 
 var dice_resources = [
@@ -13,11 +12,10 @@ var dice_resources = [
 var dices = []  # Array to keep track of the dice instances
 
 func _ready():
-	remove_dice.connect(_remove_dice)
-	add_dice.connect(_add_dice)
-	#connect(remove_dice, self, _remove_dice)
+	connect("remove_dice", _remove_dice)
+	connect("add_dice", _remove_dice)
 	_add_dice()
-		
+
 func _process(delta):
 	if Input.is_action_just_pressed("ui_left"):
 		_remove_dice()
@@ -37,3 +35,30 @@ func _remove_dice():
 	if dices.size() > 0:
 		var dice_to_remove = dices.pop_back()  # Remove the last dice from the array
 		dice_to_remove.queue_free()  # Queue the dice for deletion
+
+
+
+
+
+
+
+
+
+## Interface used to access the functionality provided by this plugin
+
+var _plugin_name = "dice_control"
+var _plugin_singleton
+
+func _init():
+	if Engine.has_singleton(_plugin_name):
+		_plugin_singleton = Engine.get_singleton(_plugin_name)
+	else:
+		printerr("Initialization error: unable to access the java logic")
+
+## Print a 'Hello World' message to the logcat.
+func helloWorld():
+	if _plugin_singleton:
+		_plugin_singleton.helloWorld()
+	else:
+		printerr("Initialization error")
+		

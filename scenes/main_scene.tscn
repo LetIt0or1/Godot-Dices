@@ -57,7 +57,7 @@ text = "BOTTOM"
 font_size = 150
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.956666, 0.291186, 0, -0.291186, -0.956666, 0, 24.7155, 0)
+transform = Transform3D(1, 0, 0, 0, -0.763774, 0.645484, 0, -0.645484, -0.763774, 9.53674e-07, 22.9274, -9.65281)
 light_energy = 1.202
 shadow_enabled = true
 script = ExtResource("2_l0e04")
@@ -155,3 +155,10 @@ offset_left = 34.0
 offset_top = -96.0
 offset_right = 34.0
 offset_bottom = -96.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.264159, 0.964479, 0, -0.964479, 0.264159, -0.321793, 15.3495, 7.8997)
+light_energy = 16.0
+shadow_enabled = true
+spot_range = 27.3633
+spot_angle = 31.9206

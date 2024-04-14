@@ -24,7 +24,7 @@ fun Dice(number: Int) {
         { Dice4() },
         { Dice5() },
         { Dice6() },
-    ).get(number)()
+    )[number - 1]()
 }
 
 @Composable

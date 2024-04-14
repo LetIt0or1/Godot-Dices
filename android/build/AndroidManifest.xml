@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.godot.game"
     android:installLocation="auto"
     android:versionCode="1"
     android:versionName="1.0">
@@ -31,8 +30,12 @@
             android:name="org.godotengine.editor.version"
             android:value="${godotEditorVersion}" />
 
+        <meta-data
+            android:name="org.godotengine.plugin.v2.dice_control"
+            android:value="com.godot.game.plugins.ControlDiceGodotPlugin" />
+
         <activity
-            android:name=".activity.GodotMainActivity"
+            android:name=".GodotApp"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
             android:excludeFromRecents="false"
             android:exported="true"
