@@ -1,18 +1,133 @@
-[gd_scene load_steps=4 format=3 uid="uid://xlky4u04oyij"]
+[gd_scene load_steps=9 format=3 uid="uid://xlky4u04oyij"]
 
 [ext_resource type="Script" path="res://scripts/control.gd" id="1_h4xhv"]
-[ext_resource type="Texture2D" uid="uid://dtnyhlimllbf8" path="res://icon.svg" id="2_c0guj"]
+[ext_resource type="Texture2D" uid="uid://by71xps6jf8ux" path="res://models/ui/minus_2.png" id="2_kcenq"]
+[ext_resource type="Texture2D" uid="uid://cui36ltdodowb" path="res://models/ui/plus_2.png" id="3_n7qo5"]
 [ext_resource type="Texture2D" uid="uid://dl6novkal2wnf" path="res://models/dice/dices_vage.png" id="3_vsixu"]
+
+[sub_resource type="Animation" id="Animation_tunsm"]
+resource_name = "remove_dice_animation"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TouchButtonRemoveDice:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0997802, 0.194363),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(88, 79), Vector2(112, 103), Vector2(87.9998, 78.9998)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TouchButtonRemoveDice:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0997802, 0.194363),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.162222, 0.162222), Vector2(0.108889, 0.108889), Vector2(0.162222, 0.162222)]
+}
+
+[sub_resource type="Animation" id="Animation_l87qe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TouchButtonRemoveDice:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(88, 79)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TouchButtonRemoveDice:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.162222, 0.162222)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TouchButtonAddDice:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(848, 83)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TouchButtonAddDice:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.160213, 0.160213)]
+}
+
+[sub_resource type="Animation" id="Animation_bdqha"]
+resource_name = "add_dice_animation"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TouchButtonAddDice:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.096874, 0.197314),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(848, 83), Vector2(863.192, 98.1917), Vector2(848.192, 83.1917)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TouchButtonAddDice:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.096874, 0.197314),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.160213, 0.160213), Vector2(0.126454, 0.126454), Vector2(0.159787, 0.159787)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5nq6s"]
+_data = {
+"RESET": SubResource("Animation_l87qe"),
+"add_dice_animation": SubResource("Animation_bdqha"),
+"remove_dice_animation": SubResource("Animation_tunsm")
+}
 
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -1.0
-offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_h4xhv")
 
 [node name="Label" type="Label" parent="."]
@@ -21,37 +136,41 @@ offset_right = 78.0
 offset_bottom = 23.0
 text = "Dice it"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_direction = 2
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.004
-anchor_right = 1.001
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -0.32
-offset_top = 1827.0
-offset_right = -0.0800781
-offset_bottom = -5.0
-grow_horizontal = 2
-grow_vertical = 0
-alignment = 1
 
-[node name="TouchButtonRemoveDice" type="TouchScreenButton" parent="HBoxContainer"]
-position = Vector2(3.8147e-06, 273)
-scale = Vector2(2.29688, 2.29688)
-texture_normal = ExtResource("2_c0guj")
+[node name="TouchButtonRemoveDice" type="TouchScreenButton" parent="MarginContainer"]
+position = Vector2(88, 79)
+scale = Vector2(0.162222, 0.162222)
+texture_normal = ExtResource("2_kcenq")
 action = "ui_left"
 
-[node name="TouchButtonJump" type="TouchScreenButton" parent="HBoxContainer"]
-position = Vector2(281, 42)
-scale = Vector2(2.29688, 2.29688)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer/TouchButtonRemoveDice"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_5nq6s")
+}
+
+[node name="TouchButtonAddDice" type="TouchScreenButton" parent="MarginContainer"]
+position = Vector2(848, 83)
+scale = Vector2(0.160213, 0.160213)
+texture_normal = ExtResource("3_n7qo5")
+action = "ui_right"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer/TouchButtonAddDice"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_5nq6s")
+}
+
+[node name="TouchButtonJump" type="TouchScreenButton" parent="MarginContainer"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(21, 328)
+scale = Vector2(4.52655, 9.22124)
 texture_normal = ExtResource("3_vsixu")
 action = "ui_accept"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="HBoxContainer/TouchButtonJump"]
-
-[node name="TouchButtonAddDice" type="TouchScreenButton" parent="HBoxContainer"]
-position = Vector2(796, 286)
-scale = Vector2(2.29688, 2.29688)
-texture_normal = ExtResource("2_c0guj")
-action = "ui_right"
+[connection signal="pressed" from="MarginContainer/TouchButtonRemoveDice" to="." method="_on_touch_button_remove_dice_pressed"]
+[connection signal="pressed" from="MarginContainer/TouchButtonAddDice" to="." method="_on_touch_button_add_dice_pressed"]

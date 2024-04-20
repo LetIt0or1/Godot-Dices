@@ -1,27 +1,18 @@
 ext.versions = [
-        compose_version    : '1.2.0',
-        androidGradlePlugin: '8.3.2',
-        compileSdk         : 34,
-        // Also update 'platform/android/export/export_plugin.cpp#OPENGL_MIN_SDK_VERSION'
-        minSdk             : 21,
-        // Also update 'platform/android/export/export_plugin.cpp#DEFAULT_TARGET_SDK_VERSION'
-        targetSdk          : 34,
-        buildTools         : '33.0.2',
-        kotlinVersion      : '1.9.23',
-        fragmentVersion    : '1.3.6',
-        nexusPublishVersion: '1.1.0',
-        javaVersion        : 17,
-        // Also update 'platform/android/detect.py#get_ndk_version()' when this is updated.
-        ndkVersion         : '23.2.8568313'
+    androidGradlePlugin: '8.2.0',
+    compileSdk         : 34,
+    // Also update 'platform/android/export/export_plugin.cpp#OPENGL_MIN_SDK_VERSION'
+    minSdk             : 21,
+    // Also update 'platform/android/export/export_plugin.cpp#DEFAULT_TARGET_SDK_VERSION'
+    targetSdk          : 34,
+    buildTools         : '34.0.0',
+    kotlinVersion      : '1.9.20',
+    fragmentVersion    : '1.6.2',
+    nexusPublishVersion: '1.3.0',
+    javaVersion        : JavaVersion.VERSION_17,
+    // Also update 'platform/android/detect.py#get_ndk_version()' when this is updated.
+    ndkVersion         : '23.2.8568313'
 
-]
-
-ext.libraries = [
-        androidGradlePlugin: "com.android.tools.build:gradle:$versions.androidGradlePlugin",
-        kotlinGradlePlugin : "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlinVersion",
-        kotlinStdLib       : "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlinVersion",
-        androidxFragment   : "androidx.fragment:fragment:$versions.fragmentVersion",
-        kotlinGradle       : "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlinVersion",
 ]
 
 ext.getExportPackageName = { ->
@@ -209,7 +200,7 @@ ext.getExportEnabledABIs = { ->
     }
     Set<String> exportAbiFilter = [];
     for (String abi_name : enabledABIs.split(VALUE_SEPARATOR_REGEX)) {
-        if (!abi_name.trim().isEmpty()) {
+        if (!abi_name.trim().isEmpty()){
             exportAbiFilter.add(abi_name);
         }
     }
@@ -263,7 +254,7 @@ ext.getGodotPluginsRemoteBinaries = { ->
     if (project.hasProperty("plugins_remote_binaries")) {
         String remoteDepsList = project.property("plugins_remote_binaries")
         if (remoteDepsList != null && !remoteDepsList.trim().isEmpty()) {
-            for (String dep : remoteDepsList.split(VALUE_SEPARATOR_REGEX)) {
+            for (String dep: remoteDepsList.split(VALUE_SEPARATOR_REGEX)) {
                 remoteDeps += dep.trim()
             }
         }
