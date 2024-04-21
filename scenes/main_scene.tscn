@@ -14,7 +14,7 @@ resource_local_to_scene = true
 size = Vector3(4, 0, 3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2radk"]
-size = Vector3(2.79382, 1.71338, 1.64709)
+size = Vector3(2.12005, 0.24057, 1.63112)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ino73"]
 
@@ -119,26 +119,38 @@ mesh = SubResource("BoxMesh_0ebmr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.300446, 0, -2.91142)
 shape = ExtResource("3_8vbt5")
 
+[node name="TopWall2" type="StaticBody3D" parent="DicesHolder/Board/walls"]
+transform = Transform3D(-0.0505929, 0.847885, -0.527762, 0, 0.528439, 0.848972, 0.99872, 0.042952, -0.0267352, -13.1612, 2.5464, -2.81637)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DicesHolder/Board/walls/TopWall2"]
+transform = Transform3D(9.99009, 0.0405185, -0.184541, -0.405434, 0.999179, -0.00977037, 0.183994, 0.00172427, 9.99829, -0.0161357, -0.51484, 0.116087)
+visible = false
+mesh = SubResource("BoxMesh_0ebmr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DicesHolder/Board/walls/TopWall2"]
+transform = Transform3D(1, -2.57045e-07, -2.04891e-08, 1.49012e-08, 1, 1.14646e-06, 1.86265e-09, -1.08266e-08, 1, 0, 0, 1.76216)
+shape = ExtResource("3_8vbt5")
+
 [node name="books" type="Node3D" parent="DicesHolder/Board"]
 transform = Transform3D(0.981417, 0, 0.191888, 0, 1, 0, -0.191888, 0, 0.981417, 3.1121, 0, 2.37516)
 
-[node name="open_book_top" parent="DicesHolder/Board/books" instance=ExtResource("6_rxyuk")]
+[node name="open_book_bot" parent="DicesHolder/Board/books" instance=ExtResource("6_rxyuk")]
 transform = Transform3D(5.4264, -4.74391e-07, -5.87827, -6.99382e-07, -8, 4.96941e-21, -5.87827, 5.13895e-07, -5.4264, -16.031, 2.2256, -10.623)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="DicesHolder/Board/books/open_book_top"]
+[node name="StaticBody3D" type="StaticBody3D" parent="DicesHolder/Board/books/open_book_bot"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DicesHolder/Board/books/open_book_top/StaticBody3D"]
-transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, -0.00959331, 0.809991, -0.127799)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DicesHolder/Board/books/open_book_bot/StaticBody3D"]
+transform = Transform3D(1, 7.10543e-15, 0, 0, 1, 3.55271e-15, 0, 0, 1, -0.00959343, 0.0994885, -0.135971)
 shape = SubResource("BoxShape3D_2radk")
 
-[node name="open_book_bottom" parent="DicesHolder/Board/books" instance=ExtResource("6_rxyuk")]
+[node name="open_book_top" parent="DicesHolder/Board/books" instance=ExtResource("6_rxyuk")]
 transform = Transform3D(-6.51551, 0, -4.64198, 0, 8, 0, 4.64198, 0, -6.51551, -18.0469, 2.38607, -10.5357)
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="DicesHolder/Board/books/open_book_bottom"]
+[node name="StaticBody3D2" type="StaticBody3D" parent="DicesHolder/Board/books/open_book_top"]
 transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, -0.242457, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DicesHolder/Board/books/open_book_bottom/StaticBody3D2"]
-transform = Transform3D(0.973444, 0, 0.228929, 0, 1, 0, -0.228929, 0, 0.973444, 0.0996602, 0.809991, -0.391027)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DicesHolder/Board/books/open_book_top/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00547504, 0.386938, -0.153756)
 shape = SubResource("BoxShape3D_2radk")
 
 [node name="map" type="Node3D" parent="DicesHolder/Board"]

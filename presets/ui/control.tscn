@@ -5,34 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://cui36ltdodowb" path="res://models/ui/plus_2.png" id="3_n7qo5"]
 [ext_resource type="Texture2D" uid="uid://dl6novkal2wnf" path="res://models/dice/dices_vage.png" id="3_vsixu"]
 
-[sub_resource type="Animation" id="Animation_tunsm"]
-resource_name = "remove_dice_animation"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TouchButtonRemoveDice:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0997802, 0.194363),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(88, 79), Vector2(112, 103), Vector2(87.9998, 78.9998)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TouchButtonRemoveDice:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0997802, 0.194363),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0.162222, 0.162222), Vector2(0.108889, 0.108889), Vector2(0.162222, 0.162222)]
-}
-
 [sub_resource type="Animation" id="Animation_l87qe"]
 length = 0.001
 tracks/0/type = "value"
@@ -110,6 +82,34 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0.160213, 0.160213), Vector2(0.126454, 0.126454), Vector2(0.159787, 0.159787)]
+}
+
+[sub_resource type="Animation" id="Animation_tunsm"]
+resource_name = "remove_dice_animation"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TouchButtonRemoveDice:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0997802, 0.194363),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(88, 79), Vector2(112, 103), Vector2(87.9998, 78.9998)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TouchButtonRemoveDice:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0997802, 0.194363),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.162222, 0.162222), Vector2(0.108889, 0.108889), Vector2(0.162222, 0.162222)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5nq6s"]
