@@ -1,4 +1,5 @@
 # Dice it!
+[![Run unit tests](https://github.com/LetIt0or1/Godot-Dices/actions/workflows/commit.android.yml/badge.svg)](https://github.com/LetIt0or1/Godot-Dices/actions/workflows/commit.android.yml)
 
 Godot engine test project
 
