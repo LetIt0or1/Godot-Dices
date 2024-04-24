@@ -1,13 +1,9 @@
 extends Node3D
 
-signal throw_dice
-
+@export var enabled = true
 var rigid_body: RigidBody3D
 
 func _ready():
-	#connect("throw_dice", applyRandomForce())
-	#throw_dice.connect(applyRandomForce)
-	
 	# Initialize the RigidBody3D reference
 	rigid_body = get_child(0) as RigidBody3D
 	if not rigid_body:
@@ -34,6 +30,7 @@ var min_torque = Vector3(-10, -10, -10)
 var max_torque = Vector3(10, 10, 10)
 
 func applyRandomForce():
+	if !enabled: return
 	# Generate a random force vector
 	var random_force = Vector3(
 		randf_range(min_force.x, max_force.x),

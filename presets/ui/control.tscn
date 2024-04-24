@@ -168,7 +168,7 @@ libraries = {
 [node name="TouchButtonJump" type="TouchScreenButton" parent="MarginContainer"]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(21, 328)
-scale = Vector2(4.52655, 9.22124)
+scale = Vector2(4.52655, 7.80088)
 texture_normal = ExtResource("3_vsixu")
 action = "ui_accept"
 
