@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8gyiuqsccrjd"
-path.s3tc="res://.godot/imported/book.png-0877b64eb9eca2c20d0d404dfeed290e.s3tc.ctex"
-path.etc2="res://.godot/imported/book.png-0877b64eb9eca2c20d0d404dfeed290e.etc2.ctex"
+path.s3tc="res://.godot/imported/book.png-f220bc53a6da2fd4eb5b167fee3cf065.s3tc.ctex"
+path.etc2="res://.godot/imported/book.png-f220bc53a6da2fd4eb5b167fee3cf065.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/deck/book1/book.png"
-dest_files=["res://.godot/imported/book.png-0877b64eb9eca2c20d0d404dfeed290e.s3tc.ctex", "res://.godot/imported/book.png-0877b64eb9eca2c20d0d404dfeed290e.etc2.ctex"]
+source_file="res://models/deck/book/book.png"
+dest_files=["res://.godot/imported/book.png-f220bc53a6da2fd4eb5b167fee3cf065.s3tc.ctex", "res://.godot/imported/book.png-f220bc53a6da2fd4eb5b167fee3cf065.etc2.ctex"]
 
 [params]
 

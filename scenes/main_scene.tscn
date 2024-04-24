@@ -6,7 +6,7 @@
 [ext_resource type="Shape3D" uid="uid://dyy1q6enpdedb" path="res://models/deck/shapes/wall_shape.tres" id="3_8vbt5"]
 [ext_resource type="Shape3D" uid="uid://do4j8gbyhk1bu" path="res://models/deck/floor/floor_shape.tres" id="5_lvuqy"]
 [ext_resource type="Texture2D" uid="uid://duo3liqc1tphg" path="res://models/deck/map/dnd_map.png" id="6_aum5s"]
-[ext_resource type="PackedScene" uid="uid://coetv86cidbbn" path="res://models/deck/book1/open_book.blend" id="6_rxyuk"]
+[ext_resource type="PackedScene" uid="uid://nyuxbu4skefc" path="res://models/deck/book/open_book.blend" id="6_rxyuk"]
 [ext_resource type="PackedScene" uid="uid://xlky4u04oyij" path="res://presets/ui/control.tscn" id="6_wb8bi"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0ebmr"]
