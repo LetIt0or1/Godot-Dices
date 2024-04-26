@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://d10edfoq82l72"]
 
-[ext_resource type="Script" path="res://scripts/MainApplication.gd" id="1_it748"]
+[ext_resource type="Script" path="res://scripts/main_application.gd" id="1_it748"]
 [ext_resource type="Script" path="res://scripts/directional_light_gyro.gd" id="2_l0e04"]
 [ext_resource type="Material" uid="uid://dh6w0ns3rq2nb" path="res://models/deck/floor/textures/new_standard_material_3d.tres" id="2_w36e8"]
 [ext_resource type="Shape3D" uid="uid://dyy1q6enpdedb" path="res://models/deck/shapes/wall_shape.tres" id="3_8vbt5"]
@@ -183,25 +183,13 @@ spot_range = 27.3633
 spot_angle = 31.9206
 
 [node name="Dice" parent="." instance=ExtResource("9_xdp5u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5598, 0.023896, 4.0762)
-enabled = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5598, 0.819351, -4.35802)
 
 [node name="dice2" parent="." instance=ExtResource("10_s2fma")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6078, 0.023896, 2.30663)
-enabled = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6078, 0.819351, 3.95423)
 
 [node name="Dice3" parent="." instance=ExtResource("11_uicj3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5889, 0.023896, 0.625483)
-enabled = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5889, 0.819351, -1.81205)
 
 [node name="Dice2" parent="." instance=ExtResource("12_wlouq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5921, 0.023896, -0.982566)
-enabled = false
-
-[node name="Dice4" parent="." instance=ExtResource("9_xdp5u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5954, 0.023896, -2.61441)
-enabled = false
-
-[node name="Dice5" parent="." instance=ExtResource("12_wlouq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6876, 0.023896, -4.64768)
-enabled = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5921, 0.819351, 1.01848)

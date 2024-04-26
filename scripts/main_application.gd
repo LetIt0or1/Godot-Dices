@@ -1,8 +1,5 @@
 extends Node3D
 
-signal remove_dice
-signal add_dice
-
 var dice_resources = [
 	preload("res://presets/dice/dice1.tscn"),
 	preload("res://presets/dice/dice2.tscn"),
@@ -12,9 +9,7 @@ var dice_resources = [
 var dices = []  # Array to keep track of the dice instances
 
 func _ready():
-	connect("remove_dice", _remove_dice)
-	connect("add_dice", _remove_dice)
-	_add_dice()
+	pass
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_left"):
@@ -24,41 +19,19 @@ func _process(delta):
 		_add_dice()
 		print("add a dice")
 
+func _attach_to_scene(node:Node3D):
+	dices.append(node)
+
 func _add_dice():
 	var dice_instance = dice_resources[randi() % dice_resources.size()].instantiate()
 	dice_instance.position = Vector3(0,5,0)
+	dice_instance.on_start = false
 	add_child(dice_instance)
-	dices.append(dice_instance)  # Keep track of the new dice instance
+	_attach_to_scene(dice_instance)
 	
 func _remove_dice():
 	print("dices.size():",dices.size())
 	if dices.size() > 0:
 		var dice_to_remove = dices.pop_back()  # Remove the last dice from the array
-		dice_to_remove.queue_free()  # Queue the dice for deletion
-
-
-
-
-
-
-
-
-
-## Interface used to access the functionality provided by this plugin
-
-var _plugin_name = "dice_control"
-var _plugin_singleton
-
-func _init():
-	if Engine.has_singleton(_plugin_name):
-		_plugin_singleton = Engine.get_singleton(_plugin_name)
-	else:
-		printerr("Initialization error: unable to access the java logic")
-
-## Print a 'Hello World' message to the logcat.
-func helloWorld():
-	if _plugin_singleton:
-		_plugin_singleton.helloWorld()
-	else:
-		printerr("Initialization error")
-		
+		dice_to_remove.reset()
+		#dice_to_remove.queue_free()  # Queue the dice for deletion

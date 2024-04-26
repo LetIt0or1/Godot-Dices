@@ -121,9 +121,9 @@ _data = {
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.872
+offset_bottom = 1.19995
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -154,6 +154,7 @@ libraries = {
 }
 
 [node name="TouchButtonAddDice" type="TouchScreenButton" parent="MarginContainer"]
+visible = false
 position = Vector2(848, 83)
 scale = Vector2(0.160213, 0.160213)
 texture_normal = ExtResource("3_n7qo5")

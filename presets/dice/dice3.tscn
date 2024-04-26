@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://4kjtvfw6mhb2"]
+[gd_scene load_steps=5 format=3 uid="uid://4kjtvfw6mhb2"]
 
 [ext_resource type="Script" path="res://scripts/dice.gd" id="1_jw7jg"]
 [ext_resource type="PackedScene" uid="uid://plrtmpeim35e" path="res://models/dice/blend/blue_dice.blend" id="1_qgp06"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0bfkv"]
+radius = 0.686848
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_npscv"]
 
@@ -9,6 +12,11 @@
 script = ExtResource("1_jw7jg")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="RigidBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]
+shape = SubResource("SphereShape3D_0bfkv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 shape = SubResource("BoxShape3D_npscv")
