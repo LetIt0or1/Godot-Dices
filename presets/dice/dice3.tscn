@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://4kjtvfw6mhb2"]
+[gd_scene load_steps=6 format=3 uid="uid://4kjtvfw6mhb2"]
 
 [ext_resource type="Script" path="res://scripts/dice.gd" id="1_jw7jg"]
 [ext_resource type="PackedScene" uid="uid://plrtmpeim35e" path="res://models/dice/blend/blue_dice.blend" id="1_qgp06"]
+[ext_resource type="Script" path="res://scripts/spot_light_dice.gd" id="3_m6jk3"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0bfkv"]
 radius = 0.686848
@@ -23,3 +24,12 @@ shape = SubResource("BoxShape3D_npscv")
 
 [node name="blue_dice" parent="RigidBody3D/CollisionShape3D" instance=ExtResource("1_qgp06")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0139225, 5.16737, -0.0245781)
+light_energy = 16.0
+light_indirect_energy = 2.675
+shadow_enabled = true
+spot_range = 8.35043
+spot_angle = 12.2937
+script = ExtResource("3_m6jk3")

@@ -8,12 +8,12 @@ var clickable_area : Area3D
 var min_force = Vector3(-7, -7, -7)
 var max_force = Vector3(7, 7, 7)
 
-var min_torque = Vector3(-1, -1, -1)
-var max_torque = Vector3(1, 1, 1)
+var min_torque = Vector3(-2, -2, -2)
+var max_torque = Vector3(2, 2, 2)
 
 func _ready():
 	rigid_body = get_child(0) as RigidBody3D
-	clickable_area = get_child(0).get_child(0) as Area3D
+	clickable_area = rigid_body.get_child(0) as Area3D
 	start_position = rigid_body.position
 	
 	clickable_area.connect("input_event", _on_area_3d_input_event)

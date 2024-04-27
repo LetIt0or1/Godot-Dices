@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqn3shkxepcew"]
+[gd_scene load_steps=7 format=3 uid="uid://cqn3shkxepcew"]
 
 [ext_resource type="Script" path="res://scripts/dice.gd" id="1_wwdaq"]
 [ext_resource type="PackedScene" uid="uid://rr82ihdmw6rc" path="res://models/dice/blend/dado2.blend" id="2_21sbj"]
+[ext_resource type="Script" path="res://scripts/spot_light_dice.gd" id="3_vcorm"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ti2d4"]
 radius = 0.686848
@@ -13,7 +14,7 @@ resource_local_to_scene = true
 radius = 0.0717076
 height = 0.921338
 
-[node name="MainScene" type="Node3D"]
+[node name="Dice1" type="Node3D"]
 script = ExtResource("1_wwdaq")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
@@ -72,5 +73,14 @@ shape = SubResource("CapsuleShape3D_ko2i2")
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, -0.428, -0.426)
 visible = false
 shape = SubResource("CapsuleShape3D_ko2i2")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0139225, 5.16737, -0.0245781)
+light_energy = 16.0
+light_indirect_energy = 2.675
+shadow_enabled = true
+spot_range = 8.35043
+spot_angle = 12.2937
+script = ExtResource("3_vcorm")
 
 [connection signal="input_event" from="RigidBody3D/Area3D" to="." method="_on_area_3d_input_event"]

@@ -8,9 +8,6 @@ var dice_resources = [
 ]
 var dices = []  # Array to keep track of the dice instances
 
-func _ready():
-	pass
-
 func _process(delta):
 	if Input.is_action_just_pressed("ui_left"):
 		_remove_dice()
